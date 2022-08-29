@@ -81,3 +81,36 @@
 //   echo $neymarsLetters[$index];
 //   echo  $index === count($neymarsLetters) - 1 ? '' : ', ';
 // };
+
+/***************************************
+ * OBJECT ORIENTIED PROGRAMMING
+ ***************************************/
+class Person
+{
+  // space modifiers
+  public $name;             # public can be accessed from outside of the class
+  protected $homeTown;      # protected can be accessed from the derived or child class
+  private $sallery;         # can only be accessed from this class
+
+  // construct or magic function
+  function __construct($name, $homeTown)
+  {
+    $this->name = $name;
+    $this->homeTown = $homeTown;
+  }
+
+  // method
+  function info()
+  {
+    echo $this->name . ' is from ' . $this->homeTown . ' and his sallery is ' . $this->sallery . '😀';
+  }
+
+  public function setSallery($sallery)
+  {
+    $this->sallery = $sallery;
+  }
+}
+
+$saikat = new Person('Moniruzzaman Saikat', 'Lalmonirhat');
+$saikat->setSallery('0000000');
+$saikat->info();
